@@ -16,7 +16,6 @@ echo $ret->pagination->next_url;
 echo '<pre>', print_r($ret->pagination->next_url), '</pre>';
 
 $imgs = array();
-$imgmeta = array();
 
 foreach ($ret->data as $photo) {
 
@@ -27,17 +26,47 @@ foreach ($ret->data as $photo) {
 while ($ret->pagination->next_url) {
 
 	$ret = json_decode(file_get_contents($ret->pagination->next_url));
-	echo "Hejsan";
 	foreach ($ret->data as $photo) {
 
 		$imgs[] = array('link'=>$photo->images->low_resolution->url, 'username'=>$photo->user->username);	
 
 	}
-		
-	
 }
 
-echo '<pre>', print_r($imgs), '</pre>';
+$query = 'SELECT link from imgs';
+$result = $db->query($query);
+if($result->num_rows > 0){
+	while($row = $result->fetch_assoc()){
+		
+		//$row['link'];
+		for ($i=0; $i < count($imgs); $i++) { 
+			if($row['link'] === $imgs[$i]['link']){
+
+				echo '<pre>', print_r($db_imgs), '</pre>';
+				echo '<pre>', print_r($imgs), '</pre>';
+				$counter++;
+			}
+		}
+		if($counter !== count($imgs)){
+			//töm databasen och släng in allt igen...
+			echo 'Töm databasen och lägg in tobbes fina bild.';
+		}
+	}
+
+	
+		
+
+}else{
+	foreach ($imgs as $key => $value) {
+		$value['username'];
+		$stmt = $db->prepare('INSERT INTO imgs (link, username) VALUES (?, ?)');
+		$stmt->bind_param('ss', $value['link'], $value['username']);
+		$stmt->execute();
+		$stmt->close();
+	}
+}
+
+//echo '<pre>', print_r($imgs), '</pre>';
 
 ?>
 
