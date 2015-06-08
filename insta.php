@@ -18,18 +18,24 @@ echo '<pre>', print_r($ret->pagination->next_url), '</pre>';
 $imgs = array();
 $imgmeta = array();
 
+foreach ($ret->data as $photo) {
+
+		$imgs[] = array('link'=>$photo->images->low_resolution->url, 'username'=>$photo->user->username, 'fullname'=>$photo->user->full_name);	
+
+	}
 
 while ($ret->pagination->next_url) {
-	
 
-
+	$ret = json_decode(file_get_contents($ret->pagination->next_url));
 	echo "Hejsan";
 	foreach ($ret->data as $photo) {
 
-		$imgs[] = array('link'=>$photo->images->low_resolution->url, 'username'=>$photo->user->username);	
+
+
+		$imgs[] = array('link'=>$photo->images->low_resolution->url, 'username'=>$photo->user->username, 'fullname'=>$photo->user->full_name);	
 
 	}
-	$ret = json_decode(file_get_contents($ret->pagination->next_url));	
+		
 	
 }
 
