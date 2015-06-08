@@ -37,7 +37,5 @@ while ($ret->pagination->next_url) {
 	
 }
 
-echo '<pre>', print_r($imgs), '</pre>';
 
-?>
 
