@@ -53,9 +53,6 @@ if($result->num_rows > 0){
 		}
 	}
 
-	
-		
-
 }else{
 	foreach ($imgs as $key => $value) {
 		$value['username'];
@@ -66,7 +63,4 @@ if($result->num_rows > 0){
 	}
 }
 
-//echo '<pre>', print_r($imgs), '</pre>';
-
-?>
 
