@@ -20,9 +20,9 @@ $imgmeta = array();
 
 foreach ($ret->data as $photo) {
 
-		$imgs[] = array('link'=>$photo->images->low_resolution->url, 'username'=>$photo->user->username, 'fullname'=>$photo->user->full_name);	
+	$imgs[] = array('link'=>$photo->images->low_resolution->url, 'username'=>$photo->user->username);	
 
-	}
+}
 
 while ($ret->pagination->next_url) {
 
@@ -30,9 +30,7 @@ while ($ret->pagination->next_url) {
 	echo "Hejsan";
 	foreach ($ret->data as $photo) {
 
-
-
-		$imgs[] = array('link'=>$photo->images->low_resolution->url, 'username'=>$photo->user->username, 'fullname'=>$photo->user->full_name);	
+		$imgs[] = array('link'=>$photo->images->low_resolution->url, 'username'=>$photo->user->username);	
 
 	}
 		
