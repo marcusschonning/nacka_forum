@@ -32,7 +32,7 @@ while ($ret->pagination->next_url) {
 
 	}
 }
-
+$counter = 0;
 $query = 'SELECT link from imgs';
 $result = $db->query($query);
 if($result->num_rows > 0){
@@ -42,16 +42,17 @@ if($result->num_rows > 0){
 		for ($i=0; $i < count($imgs); $i++) { 
 			if($row['link'] === $imgs[$i]['link']){
 
-				echo '<pre>', print_r($db_imgs), '</pre>';
-				echo '<pre>', print_r($imgs), '</pre>';
+				//echo '<pre>', print_r($db_imgs), '</pre>';
+				//echo '<pre>', print_r($imgs), '</pre>';
 				$counter++;
 			}
 		}
-		if($counter !== count($imgs)){
-			//töm databasen och släng in allt igen...
-			echo 'Töm databasen och lägg in tobbes fina bild.';
-		}
+		
 	}
+	if($counter !== count($imgs)){
+			//töm databasen och släng in allt igen...
+			echo 'Töm. ';
+		}
 
 }else{
 	foreach ($imgs as $key => $value) {
