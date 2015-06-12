@@ -5,7 +5,6 @@
 	<title>Nacka Forum</title>
 </head>
 <body>
-	
 <h1>Pung</h1>
 
 <?php 
@@ -18,7 +17,6 @@ if (isset($_SESSION['graphobject'])) {
 }else{
 	echo "Inte inloggad";
 }
-
- ?>
+?>
 </body>
 </html>
