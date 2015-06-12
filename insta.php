@@ -33,9 +33,10 @@ while ($ret->pagination->next_url) {
 		$imgs[] = array('link'=>$photo->images->low_resolution->url, 'username'=>$photo->user->username);	
 
 	}
-		
-	
 }
+
+$query = SELECT 'link, username' FROM 'img';
+$query->
 
 echo '<pre>', print_r($imgs), '</pre>';
 
