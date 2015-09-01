@@ -114,19 +114,19 @@ if(isset($session)){
 } else {
 
 	//Login url [installera app]
-	$helper = new FacebookRedirectLoginHelper(
-		'http://localhost/nacka_insta/nacka_forum/fblogin.php');
-	echo '<a href="'. $helper->getLoginUrl(array('email','user_friends')) . '" target="_top">Login</a>';
+	$helper = new FacebookRedirectLoginHelper('http://localhost/nacka_insta/nacka_forum/fblogin.php');
+	$login_link_url = $helper->getLoginUrl(array('email','user_friends'));
 }
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<div id="fb-root"></div>
-</body>
-</html>
+<?php include "header.php" ?>
+<div class="reveal">
+	<h1>Ladda upp din bästa matbild</h1>
+	<h2>Vinn en matkasse med matvaror utvalda av kocken Tommy Myllymäki</h2>
+	<a class="login" href="<?php echo $login_link_url ?>" target="_top"><p>Klicka här för att logga in med ditt Facebook-konto för att gå vidare till tävlingen</p></a>
+	<img src="img/glas.png" alt="glas">
+</div>
+<?php include "footer.php" ?>
+
+
