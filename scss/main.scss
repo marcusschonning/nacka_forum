@@ -14,6 +14,7 @@ body{
 	background: url('../img/bg.jpg') repeat-y;
 	width: 810px;
 	margin: 0 auto;
+	position: relative;
 }
 
 .main-navigation{
@@ -39,22 +40,81 @@ body{
 		}
 	}
 }
+///Login-page
+.reveal{
+	h1, h2{
+		text-transform: uppercase;
+	}
+	h1{
+		color: #e8308a;
+		font-size: 45px;
+		margin-bottom: 0;
+	}
+	h2{
+		color: white;
+		font-weight: 300;
+		font-size: 32px;
+		margin: 0;
+		padding: 0;
+	}
 
+	.login{
+		background: #dc4c89;
+		color: white;
+		text-decoration: none;
+		border: 3px solid #dc4c89;
+		box-shadow: inset 0 0 0 2px #fff;
+		display: block;
+		border-radius: 50%;
+		text-align: center;
+		position: relative;
+		width: 200px;
+		height: 200px;
+		transition: all 500ms;
+		margin: 150px 0 200px 0;
+		left: 100px;
+		p{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -60%);
+			text-transform: uppercase;
+			font-weight: bold;
+			width: 90%;
+			margin:0;
+			padding: 0;
+			i{
+				font-size: 30px;
+			}
+		}
+		&:hover{
+			transform: scale(1.04);
+		}
+	}
+	img{
+		width: 270px;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 100px;
+	}
+}
+///index.php
 .intro{
 	background:url('../img/myllymaki.png') no-repeat right;
 
-	h2{
-		margin: 45px 0 0 0;
+	h1{
+		margin: 45px 0 20px 0;
 		line-height: 30px;
-		font-weight: normal;
-		font-size: 30px;
+		//font-weight: normal;
+		font-size: 40px;
 		color: #e8308a;
 		text-transform: uppercase;
 	}
-	h3{
+	h2{
 		margin-top: 0;
 		font-weight: normal;
-		font-size: 26px;
+		font-size: 32px;
 		color: #fff;
 		text-transform: uppercase;
 		max-width: 500px;
@@ -151,7 +211,12 @@ body{
 				visibility: hidden;
 			}
 
-
+			p{
+				margin: 0 0 10px 0;
+				&:before{
+					content:'@'
+				}
+			}
 			img{
 				width: 100%;
 				display: inline-block;
@@ -199,6 +264,45 @@ body{
 		}
 	}
 }
+
+//Other pages
+.sub-intro{
+	h1{
+		color: #e8308a;
+		font-size: 55px;
+		text-transform: uppercase;
+		font-weight: 900;
+		margin-bottom: 10px;
+	}
+	p{
+		max-width: 450px;
+		color: #eee;
+		line-height: 30px;
+		margin-top: 0;
+	}
+	a{
+		text-decoration: none;
+		color: white;
+		display: inline-block;
+		padding: 10px 50px;
+		text-transform: uppercase;
+		background: #e8308a;
+		border-radius: 3px;
+
+	}
+}
+.rules{
+	background: url('../img/glas.png') no-repeat top right;
+}
+.all{
+	position: relative;
+	margin-bottom: 100px;
+	background: url('../img/myllymaki.png') no-repeat top right;
+	.sub-intro{
+		margin-bottom: 100px;
+	}
+}
+
 
 .clearfix:after {
      visibility: hidden;

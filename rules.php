@@ -14,13 +14,11 @@ if (!isset($_SESSION['graphobject'])) {
 		<li><a href="rules.php" class="active">REGLER &#38; PRISER</a></li>
 	</ul>
 </nav>
-<div class="rules">
-	<h2>Regler och priser</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est distinctio beatae esse itaque odio, voluptate maiores quisquam iste earum delectus vero alias. Maiores distinctio, reprehenderit, dolorem laboriosam eveniet error.</p>
-	<button><a href="index.php"></a></button>
+<div class="sub-intro rules">
+	<h1>Regler &#38; priser</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est distinctio beatae esse itaque odio, voluptate maiores quisquam iste earum delectus vero alias. Maiores distinctio, reprehenderit, dolorem laboriosam eveniet error. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, fugiat labore temporibus voluptatem ipsam similique voluptas dolorem alias quidem corporis atque iure nesciunt eaque culpa eligendi consectetur architecto recusandae pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero asperiores quibusdam magni, praesentium et distinctio illum ex natus mollitia adipisci tempora sequi in doloremque, quis nam omnis voluptatem tenetur officiis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi est distinctio beatae esse itaque odio, voluptate maiores quisquam iste earum delectus vero alias. Maiores distinctio, reprehenderit, dolorem laboriosam eveniet error. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, fugiat labore temporibus voluptatem ipsam similique voluptas dolorem alias quidem corporis atque iure nesciunt eaque culpa eligendi consectetur architecto recusandae pariatur.</p>
 </div>
 
 
-
-</div>
 <?php include "footer.php"; ?>

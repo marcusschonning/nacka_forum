@@ -13,8 +13,8 @@
 		</ul>
 	</nav>
 	<div class="intro">
-		<h2>Ladda upp din bästa matbild</h2>
-		<h3>Vinn en matkasse med varor utvalda av kocken Tommy Myllymäki</h3>
+		<h1>Ladda upp din bästa matbild</h1>
+		<h2>Vinn en matkasse med varor utvalda av kocken Tommy Myllymäki</h2>
 		<p>Följ instruktionerna nedan för att delta i tävlingen. 
 		Här i appen presenteras alla tävlingsbidrag som laddats upp via Instagram, 
 		och här kan du också rösta på dina favoritbilder. Varje vecka utser en jury, 
@@ -36,38 +36,38 @@
 		<h4>Senaste bidragen</h4>
 		<a href="#">Se alla bidrag</a>
 		<div class="latest-images">
-	<?php 
-	session_start();
+		<?php 
+		session_start();
 
-	if (isset($_SESSION['graphobject'])) {
+		if (isset($_SESSION['graphobject'])) {
 
-		echo '<input type="hidden" value="'.$_SESSION['graphobject']['id'].'">';
+			echo '<input type="hidden" value="'.$_SESSION['graphobject']['id'].'">';
 
-		$query = 'SELECT * from imgs ORDER BY id DESC LIMIT 9';
-		$result = $db->query($query);
-		if($result->num_rows > 0){
-			while($row = $result->fetch_assoc()){
-				?>
-				<div class="image">
-					<p><?php echo $row['username']; ?></p>
-					<img src="<?php echo $row['link']; ?>" alt="insta">
-					<div class="vote-meta" data-id="<?php echo $row['id']; ?>">
-						<span class="votes"><i class="fa fa-heart"></i> <?php echo $row['votes']; ?></span><span class="share"><i class="fa fa-share-alt"></i></span><button data-id="<?php echo $row['id']; ?>">Rösta</button>
+			$query = 'SELECT * from imgs ORDER BY id DESC LIMIT 9';
+			$result = $db->query($query);
+			if($result->num_rows > 0){
+				while($row = $result->fetch_assoc()){
+					?>
+					<div class="image">
+						<p><?php echo $row['username']; ?></p>
+						<img src="<?php echo $row['link']; ?>" alt="insta">
+						<div class="vote-meta" data-id="<?php echo $row['id']; ?>">
+							<span class="votes"><i class="fa fa-heart"></i> <?php echo $row['votes']; ?></span><span class="share"><i class="fa fa-share-alt"></i></span><button data-id="<?php echo $row['id']; ?>">Rösta</button>
+						</div>
 					</div>
-				</div>
-				<?php
-			}
+					<?php
+				}
 
+			}
+			?>
+			<div class="image"></div>
+			<?php 
+
+			// echo "<pre>" , print_r($_SESSION['graphobject']) , "</pre>";
+		}else{
+			header('Location: fblogin.php');
 		}
 		?>
-		<div class="image"></div>
-		<?php 
-
-		// echo "<pre>" , print_r($_SESSION['graphobject']) , "</pre>";
-	}else{
-		header('Location: fblogin.php');
-	}
-	?>
+		</div>
 	</div>
-</div>
 <?php include "footer.php"; ?>
