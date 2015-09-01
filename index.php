@@ -40,7 +40,11 @@
 	session_start();
 
 	if (isset($_SESSION['graphobject'])) {
+<<<<<<< HEAD
 		// echo "Inloggad! :D";
+=======
+		
+>>>>>>> origin/master
 		echo '<input type="hidden" value="'.$_SESSION['graphobject']['id'].'">';
 
 		$query = 'SELECT * from imgs ORDER BY id DESC LIMIT 9';
@@ -65,7 +69,6 @@
 
 		// echo "<pre>" , print_r($_SESSION['graphobject']) , "</pre>";
 	}else{
-		echo "<p>Inte inloggad</p>";
 		header('Location: fblogin.php');
 	}
 	?>
