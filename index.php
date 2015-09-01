@@ -40,28 +40,30 @@
 	session_start();
 
 	if (isset($_SESSION['graphobject'])) {
-		
+
 		echo '<input type="hidden" value="'.$_SESSION['graphobject']['id'].'">';
 
 		$query = 'SELECT * from imgs ORDER BY id DESC LIMIT 9';
 		$result = $db->query($query);
 		if($result->num_rows > 0){
 			while($row = $result->fetch_assoc()){
-				echo $row['id'];
 				?>
 				<div class="image">
 					<p><?php echo $row['username']; ?></p>
 					<img src="<?php echo $row['link']; ?>" alt="insta">
 					<div class="vote-meta" data-id="<?php echo $row['id']; ?>">
-						<span class="votes"><?php echo $row['votes']; ?></span><span class="share"><i class="fa fa-share-alt"></i></span><button data-id="<?php echo $row['id']; ?>">Rösta</button>
+						<span class="votes"><i class="fa fa-heart"></i> <?php echo $row['votes']; ?></span><span class="share"><i class="fa fa-share-alt"></i></span><button data-id="<?php echo $row['id']; ?>">Rösta</button>
 					</div>
 				</div>
 				<?php
 			}
 
 		}
+		?>
+		<div class="image"></div>
+		<?php 
 
-		echo "<pre>" , print_r($_SESSION['graphobject']) , "</pre>";
+		// echo "<pre>" , print_r($_SESSION['graphobject']) , "</pre>";
 	}else{
 		header('Location: fblogin.php');
 	}
