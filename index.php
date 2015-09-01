@@ -3,6 +3,15 @@
 	include "header.php"; 
 	include "connect.php";
 ?>
+	<nav class="main-navigation">
+		<ul>
+			<li><a href="index.php" class="active">TÄVLA</a></li>
+			<li><a href="all.php">ALLA BIDRAG</a></li>
+			<li><a href="toplist.php">TOPPLISTA</a></li>
+			<li><a href="winners.php">VINNARE</a></li>
+			<li><a href="rules.php">REGLER &#38; PRISER</a></li>
+		</ul>
+	</nav>
 	<div class="intro">
 		<h2>Ladda upp din bästa matbild</h2>
 		<h3>Vinn en matkasse med varor utvalda av kocken Tommy Myllymäki</h3>
