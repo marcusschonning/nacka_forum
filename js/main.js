@@ -40,7 +40,7 @@ $(function(){
 					if($(this).attr('data-id') === res){
 						$(this).addClass('voted');
 						var votes = parseInt($(this).children('.votes').text()) + 1;
-						$(this).children('.votes').text(votes);
+						$(this).children('.votes').html('<i class="fa fa-heart">'+votes);
 					}
 				});
 			}
