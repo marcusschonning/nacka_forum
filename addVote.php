@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-$_POST['hej']
+
 if(isset($_POST['fb_id']) && isset($_POST['insta_id'])){
 	$fb_id = $_POST['fb_id'];
 	$insta_id = intval($_POST['insta_id']);
