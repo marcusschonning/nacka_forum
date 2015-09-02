@@ -263,6 +263,18 @@ body{
 				background-image: -o-linear-gradient(top, #616161, #000000);
 				background-image: linear-gradient(to bottom, #616161, #000000);
 			}
+
+			//Om man redan röstat
+			.disabled{
+				button{
+					background: lightgrey;
+				}
+			}
+			.voted{
+				.votes{
+					color: red;
+				}
+			}
 		}
 	}
 }

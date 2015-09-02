@@ -212,6 +212,10 @@ body {
       background-image: -ms-linear-gradient(top, #616161, #000000);
       background-image: -o-linear-gradient(top, #616161, #000000);
       background-image: linear-gradient(to bottom, #616161, #000000); }
+    .latest .latest-images .image .disabled button {
+      background: lightgrey; }
+    .latest .latest-images .image .voted .votes {
+      color: red; }
 
 .sub-intro h1 {
   color: #e8308a;
